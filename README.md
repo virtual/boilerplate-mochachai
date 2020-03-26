@@ -11,3 +11,5 @@ QA with mocha & chai
 ## Notes
 
 - You can comment out suites within the `tests/*.js` files in order to focus on fixing one test suite at a time.
+- Updated node to version 4.7.0 - `"node": "4.7.0"` in package.json to support Heroku
+- Use automatic deployment from `gomix` branch on Deploy tab in Heroku
