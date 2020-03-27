@@ -109,23 +109,25 @@ suite('Unit Tests', function(){
 
 // // -----------------------------------------------------------------------------
 
-//   // These variables are used in the tests. Don't Edit them.
-//   var winterMonths = ['dec,','jan', 'feb', 'mar'];
-//   var backendLanguages = ['php', 'python', 'javascript', 'ruby', 'asp'];
-//   suite('Arrays', function(){
+  // These variables are used in the tests. Don't Edit them.
+  var winterMonths = ['dec,','jan', 'feb', 'mar'];
+  var backendLanguages = ['php', 'python', 'javascript', 'ruby', 'asp'];
+  suite('Arrays', function(){
     
-//     /** 11 - #isArray vs #isNotArray **/
-//     test('#isArray, #isNotArray', function() {
-//       assert.fail('isThisAnArray?'.split(''), 'String.prototype.split() returns an Array');
-//       assert.fail([1,2,3].indexOf(2), 'indexOf returns a number.');
-//     });
+    /** 11 - #isArray vs #isNotArray **/
+    test('#isArray, #isNotArray', function() {
+      assert.isArray('isThisAnArray?'.split(''), 'String.prototype.split() returns an Array');
+      assert.isNotArray([1,2,3].indexOf(2), 'indexOf returns a number.');
+    });
     
-//     /** 12 - #include vs #notInclude **/
-//     test('Array #include, #notInclude', function() {
-//       assert.fail(winterMonths, 'jul', "It's summer in july...");
-//       assert.fail(backendLanguages, 'javascript', 'JS is a backend language !!');
-//     });
-//   });
+    /** 12 - #include vs #notInclude **/
+    // Asserts that haystack includes needle. Can be used to assert the inclusion of a value 
+    // in an array, a substring in a string, or a subset of properties in an object.
+    test('Array #include, #notInclude', function() {
+      assert.notInclude(winterMonths, 'jul', "It's summer in july...");
+      assert.include(backendLanguages, 'javascript', 'JS is a backend language !!');
+    });
+  });
 
 // // -----------------------------------------------------------------------------
 
