@@ -156,6 +156,7 @@ suite('Functional Tests', function () {
           assert.equal(res.status, 200, 'response code 200');
           assert.equal(res.type, 'application/json', 'return a json object');
           assert.equal(res.body.name, 'Giovanni', 'name should be Giovanni');
+          assert.equal(res.body.surname, 'da Verrazzano', 'surname should be da Verrazzano');
 
           // assert.fail(); // remove this after adding tests
           done();
