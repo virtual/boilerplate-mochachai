@@ -162,55 +162,55 @@ suite('Unit Tests', function(){
   
 //  // ----------------------------------------------------------------------------- 
 
-//   // These variables are used in the tests. Don't Edit them.
-//   var Car = function() {
-//     this.model = 'cedan';
-//     this.engines = 1;
-//     this.wheels = 4;
-//   };
+  // These variables are used in the tests. Don't Edit them.
+  var Car = function() {
+    this.model = 'sedan';
+    this.engines = 1;
+    this.wheels = 4;
+  };
 
-//   var Plane = function() {
-//     this.model = '737';
-//     this.engines = ['left', 'right'];
-//     this.wheels = 6;
-//     this.wings = 2;
-//   };
+  var Plane = function() {
+    this.model = '737';
+    this.engines = ['left', 'right'];
+    this.wheels = 6;
+    this.wings = 2;
+  };
   
-//   var myCar = new Car();
-//   var airlinePlane = new Plane();
+  var myCar = new Car();
+  var airlinePlane = new Plane();
 
-//   suite('Objects', function(){
+  suite('Objects', function(){
     
-//     /** 16 - #property asserts that the actual object has a given property. **/
-//     // Use #property or #notProperty where appropriate
-//     test('#property, #notProperty', function() {
-//       assert.fail(myCar, 'wings', 'A car has not wings');
-//       assert.fail(airlinePlane, 'engines', 'planes have engines');
-//       assert.fail(myCar, 'wheels', 'Cars have wheels');
-//     });
+    /** 16 - #property asserts that the actual object has a given property. **/
+    // Use #property or #notProperty where appropriate
+    test('#property, #notProperty', function() {
+      assert.notProperty(myCar, 'wings', 'A car has not wings');
+      assert.property(airlinePlane, 'engines', 'planes have engines');
+      assert.property(myCar, 'wheels', 'Cars have wheels');
+    });
 
-//     test('#typeOf, #notTypeOf', function() {
+    test('#typeOf, #notTypeOf', function() {
       
-//       /** 17 #typeOf asserts that value’s type is the given string, **/
-//       // as determined by Object.prototype.toString.
-//       // Use #typeOf or #notTypeOf where appropriate
-//       assert.fail(myCar, 'object');
-//       assert.fail(myCar.model, 'string');
-//       assert.fail(airlinePlane.wings, 'string');
-//       assert.fail(airlinePlane.engines, 'array');
-//       assert.fail(myCar.wheels, 'number');
-//     });
+      /** 17 #typeOf asserts that value’s type is the given string, **/
+      // as determined by Object.prototype.toString.
+      // Use #typeOf or #notTypeOf where appropriate
+      assert.typeOf(myCar, 'object');
+      assert.typeOf(myCar.model, 'string');
+      assert.notTypeOf(airlinePlane.wings, 'string');
+      assert.typeOf(airlinePlane.engines, 'array');
+      assert.typeOf(myCar.wheels, 'number');
+    });
 
-//     test('#instanceOf, #notInstanceOf', function() {
+    test('#instanceOf, #notInstanceOf', function() {
       
-//       /** 18 #instanceOf asserts that an object is an instance of a constructor **/
-//       // Use #instanceOf or #notInstanceOf where appropriate
-//       assert.fail(myCar, Plane);
-//       assert.fail(airlinePlane, Plane);
-//       assert.fail(airlinePlane, Object, 'everything is an Object');
-//       assert.fail(myCar.wheels, String );
-//     });
-//   });
+      /** 18 #instanceOf asserts that an object is an instance of a constructor **/
+      // Use #instanceOf or #notInstanceOf where appropriate
+      assert.notInstanceOf(myCar, Plane);
+      assert.instanceOf(airlinePlane, Plane);
+      assert.instanceOf(airlinePlane, Object, 'everything is an Object');
+      assert.notInstanceOf(myCar.wheels, String ); // number
+    });
+  });
   
 // -----------------------------------------------------------------------------
 });
