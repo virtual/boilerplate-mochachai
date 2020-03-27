@@ -131,34 +131,34 @@ suite('Unit Tests', function(){
 
 // // -----------------------------------------------------------------------------
 
-//   // These variables are used in the tests. Don't Edit them.
-//   var formatPeople = function(name, age) {
-//     return '# name: ' + name + ', age: ' + age + '\n';
-//   };
-//   suite('Strings', function(){
+  // These variables are used in the tests. Don't Edit them.
+  var formatPeople = function(name, age) {
+    return '# name: ' + name + ', age: ' + age + '\n';
+  };
+  suite('Strings', function(){
     
-//     /** 13 - #isString asserts that the actual value is a string. **/
-//     test('#isString, #isNotString', function() {
-//       assert.fail(Math.sin(Math.PI/4), 'a float is not a string');
-//       assert.fail(process.env.PATH, 'env vars are strings (or undefined)');
-//       assert.fail(JSON.stringify({type: 'object'}), 'a JSON is a string');
-//     });
+    /** 13 - #isString asserts that the actual value is a string. **/
+    test('#isString, #isNotString', function() {
+      assert.isNotString(Math.sin(Math.PI/4), 'a float is not a string');
+      assert.isString(process.env.PATH, 'env vars are strings (or undefined)');
+      assert.isString(JSON.stringify({type: 'object'}), 'a JSON is a string');
+    });
     
-//     /** 14 - #include (on #notInclude ) works for strings too !! **/
-//     // It asserts that the actual string contains the expected substring
-//     test('String #include, #notInclude', function() {
-//       assert.fail('Arrow', 'row', "Arrow contains row...");
-//       assert.fail('dart', 'queue', "But a dart doesn't contain a queue");
-//     });
+    /** 14 - #include (on #notInclude ) works for strings too !! **/
+    // It asserts that the actual string contains the expected substring
+    test('String #include, #notInclude', function() {
+      assert.include('Arrow', 'row', "Arrow contains row...");
+      assert.notInclude('dart', 'queue', "But a dart doesn't contain a queue");
+    });
     
-//     /** 15 - #match Asserts that the actual value **/
-//     // matches the second argument regular expression.
-//     test('#match, #notMatch', function() {
-//       var regex =  /^#\sname\:\s[\w\s]+,\sage\:\s\d+\s?$/;
-//       assert.fail(formatPeople('John Doe', 35), regex);
-//       assert.fail(formatPeople('Paul Smith III', 'twenty-four'), regex);
-//     });
-//   });
+    /** 15 - #match Asserts that the actual value **/
+    // matches the second argument regular expression.
+    test('#match, #notMatch', function() {
+      var regex =  /^#\sname\:\s[\w\s]+,\sage\:\s\d+\s?$/;
+      assert.match(formatPeople('John Doe', 35), regex);
+      assert.notMatch(formatPeople('Paul Smith III', 'twenty-four'), regex); // two spaces in first name fail
+    });
+  });
   
 //  // ----------------------------------------------------------------------------- 
 
